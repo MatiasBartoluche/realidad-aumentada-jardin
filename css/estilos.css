@@ -1,3 +1,30 @@
+:root{
+    /* variables de colores de la pagina */
+    --background-color: #333;
+    --sidebar-color: #FFFFFF;
+    --primary-color: #538fdc;
+    --primary-color-light: #9B27B00D;
+    --toggle-color: #78788c;
+    --text-color: #d6d6e6;
+
+    /* animaciones de transicion */
+    --tran-03: all 0.2s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.4s ease;
+    --header-height: 5vh;
+    --section--height: 90vh;
+}
+
 body{
-    background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+section{
+    width: 98%;
+    margin: 1%;
+    background-color: var(--primary-color);
+    border-radius: 20px;
 }
