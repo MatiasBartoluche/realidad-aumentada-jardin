@@ -4,7 +4,8 @@
 
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <title>Realidad aumentada jardin</title>
         <link rel="stylesheet" href="./css/estilos.css" />
 
@@ -25,13 +26,14 @@
     <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled:false">
         
         <!-- define your markers -->
-        <a-marker preset='hiro'>
+        <a-marker type='pattern' url='./assets/marker/tierra71.patt'>
         <!-- here define the content to display on top of the marker -->
             <a-box position='0 0.5 0' material='color: red;'></a-box>
         </a-marker>
 
         <!-- define a simple camera -->
         <a-entity camera></a-entity>
+
 
       </a-scene>
     </body>
