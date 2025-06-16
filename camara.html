@@ -26,15 +26,14 @@
 
 <a-scene embedded arjs="debugUIEnabled: true;" vr-mode-ui="enabled:false">
 
-
-
 <!--<a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled:false">-->
+
 
   <a-marker id="marcadorTierra" type="pattern" url="./assets/marker/tierra60.patt" emitevents="true">
     <a-entity id="rotacionTierra" rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear">
       <a-entity id="modeloTierra"
           gltf-model="./assets/model/tierra/scene.gltf"
-          scale="2 2 2" position="0 0 0" rotation="90 180 0" visible="false">
+          scale="0.00025 0.00025 0.00025" position="0 0 0" rotation="90 180 0" visible="false">
         </a-entity>
     </a-entity>    
   </a-marker>
