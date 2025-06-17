@@ -3,6 +3,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const modeloLuna = document.querySelector("#modeloLuna");
     const modeloSol = document.querySelector("#modeloSol");
 
+    const tierraSistema = document.querySelector("#tierraSistema");
+    const lunaSistema = document.querySelector("#lunaSistema");
+    const solSistema = document.querySelector("#solSistema");
+
     document.querySelector("#marcadorTierra").addEventListener("markerFound", () => {
         console.log("TIERRA detectada");
         modeloTierra.setAttribute("visible", "true");
@@ -22,7 +26,12 @@ window.addEventListener('DOMContentLoaded', () => {
         modeloLuna.setAttribute("visible", "false");
         modeloTierra.setAttribute("visible", "false");
         modeloSol.setAttribute("visible", "true");
-    }); 
+    });
 
+    document.querySelector("#marcadorSistema").addEventListener("markerFound", () => {
+        console.log("SISTEMA detectado");
+        tierraSistema.setAttribute("visible", "true");
+        lunaSistema.setAttribute("visible", "true");
+        solSistema.setAttribute("visible", "true");
+    });
 });
-

@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
-    <head>
+  <head>
         <meta charset="UTF-8" />
-        
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <title>Realidad aumentada jardin</title>
         <link rel="stylesheet" href="./css/estilos.css" />
 
         <script src="./js/script.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
         <!-- script para el funcionamiento de a-frame-->
         <!-- script de A-Frame version1 1.0.0 -->
         <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
@@ -19,41 +16,87 @@
         <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 
     
-    </head>
+  </head>
 
-    <body>
-      <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled:false">
+  <body>
+    <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled:false">
 
-        <a-marker id="marcadorTierra" type="pattern" url="./assets/marker/tierra60.patt" emitevents="true">
-          <a-entity id="rotacionTierra" rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear">
-            <a-entity id="modeloTierra"
+      <a-marker id="marcadorTierra" type="pattern" url="./assets/marker/tierra60.patt" emitevents="true">
+        <a-entity id="rotacionTierra" rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear">
+          <a-entity id="modeloTierra"
                 gltf-model="./assets/model/tierra/scene.gltf"
                 scale="0.5 0.5 0.5" position="0 0 0" rotation="90 180 0" visible="false">
-              </a-entity>
-          </a-entity>    
-        </a-marker>
+          </a-entity>
+        </a-entity>    
+      </a-marker>
 
-        <a-marker id="marcadorLuna" type="pattern" url="./assets/marker/luna60.patt" emitevents="true">
-          <a-entity id="rotacionLuna" rotation="0 0 0" position="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear">
-              <a-entity id="modeloLuna"
+      <a-marker id="marcadorLuna" type="pattern" url="./assets/marker/luna60.patt" emitevents="true">
+        <a-entity id="rotacionLuna" rotation="0 0 0" position="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear">
+          <a-entity id="modeloLuna"
                 gltf-model="./assets/model/luna/scene.gltf"
                 scale="0.35 0.35 0.35" rotation="90 180 0" visible="false">
-              </a-entity>
           </a-entity>
-        </a-marker>
+        </a-entity>
+      </a-marker>
 
-        <a-marker id="marcadorSol" type="pattern" url="./assets/marker/sol70.patt" emitevents="true">
-          <a-entity id="rotacionSol" rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear">
-              <a-entity id="modeloSol"
+      <a-marker id="marcadorSol" type="pattern" url="./assets/marker/sol70.patt" emitevents="true">
+        <a-entity id="rotacionSol" rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear">
+          <a-entity id="modeloSol"
                 gltf-model="./assets/model/sol/scene.gltf"
                 scale="0.07 0.07 0.07" position="0 0 0" rotation="90 180 0" visible="false">
-              </a-entity>
           </a-entity>
-        </a-marker>
+        </a-entity>
+      </a-marker>
 
-        <a-entity camera></a-entity>
-      </a-scene>
 
-    </body>
+        <!-- Marcador que visualiza sistema de rotaciones -->
+      <a-marker id="marcadorSistema" type="pattern" url="./assets/marker/sistema.patt" emitevents="true">
 
+      <!-- Sol en el centro -->
+        <a-entity id="rotacionSolSistema" rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear">
+          <a-entity id="solSistema"
+                gltf-model="./assets/model/sol/scene.gltf"
+                scale="0.05 0.05 0.05" position="0 0 0" rotation="90 180 0" visible="false">
+          </a-entity>
+        </a-entity>
+
+        <!-- Contenedor que rota alrededor del Sol (órbita de la Tierra) -->
+        <a-entity id="orbitaTierra"
+                  animation="property: rotation; to: 0 0 360; loop: true; dur: 20000; easing: linear">
+
+          <!-- Contenedor Tierra + órbita lunar (posición fija relativa a Sol) -->
+          <a-entity id="contenedorTierra" position="1 0 0">
+
+            <!-- Tierra (fija en su órbita alrededor del Sol) -->
+            <a-entity id="tierraSistema"
+                      gltf-model="./assets/model/tierra/scene.gltf"
+                      scale="0.07 0.07 0.07"
+                      position="0 0 0"
+                      rotation="90 180 0">
+            </a-entity>
+
+            <!-- Órbita de la Luna (rota alrededor de la Tierra) -->
+            <a-entity id="orbitaLuna"
+                      animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear">
+              
+              <!-- Luna (posición relativa a la Tierra) -->
+              <a-entity id="lunaSistema"
+                        gltf-model="./assets/model/luna/scene.gltf"
+                        scale="0.02 0.02 0.02"
+                        position="0.15 0 0"
+                        rotation="90 180 0">
+              </a-entity>
+
+            </a-entity>
+
+          </a-entity>
+        </a-entity>
+
+      </a-marker>
+
+      <a-entity camera></a-entity>
+
+    </a-scene>
+
+  </body>
 </html>
