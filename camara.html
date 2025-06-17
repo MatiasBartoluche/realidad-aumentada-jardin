@@ -48,11 +48,12 @@
         </a-entity>
       </a-marker>
 
+<!--##############################################################################################-->
 
-        <!-- Marcador que visualiza sistema de rotaciones -->
+      <!-- Marcador que visualiza sistema de rotaciones -->
       <a-marker id="marcadorSistema" type="pattern" url="./assets/marker/sistema.patt" emitevents="true">
 
-      <!-- Sol en el centro -->
+      <!-- Sol en el centro, en rotacion -->
         <a-entity id="rotacionSolSistema" rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear">
           <a-entity id="solSistema"
                 gltf-model="./assets/model/sol/scene.gltf"
@@ -65,26 +66,31 @@
                   animation="property: rotation; to: 0 0 360; loop: true; dur: 20000; easing: linear">
 
           <!-- Contenedor Tierra + órbita lunar (posición fija relativa a Sol) -->
-          <a-entity id="contenedorTierra" position="1 0 0">
+          <a-entity id="contenedorTierra" position="1.2 0 0">
 
-            <!-- Tierra (fija en su órbita alrededor del Sol) -->
-            <a-entity id="tierraSistema"
-                      gltf-model="./assets/model/tierra/scene.gltf"
-                      scale="0.07 0.07 0.07"
-                      position="0 0 0"
-                      rotation="90 180 0">
+            <!-- Tierra (fija en su órbita alrededor del Sol) y movimiento rotacional -->
+            <a-entity id="rotacionTierraSistema" rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear">
+              <a-entity id="tierraSistema"
+                        gltf-model="./assets/model/tierra/scene.gltf"
+                        scale="0.25 0.25 0.25"
+                        position="0 0 0"
+                        rotation="90 180 0">
+              </a-entity>
             </a-entity>
+
 
             <!-- Órbita de la Luna (rota alrededor de la Tierra) -->
             <a-entity id="orbitaLuna"
                       animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear">
               
-              <!-- Luna (posición relativa a la Tierra) -->
-              <a-entity id="lunaSistema"
-                        gltf-model="./assets/model/luna/scene.gltf"
-                        scale="0.02 0.02 0.02"
-                        position="0.15 0 0"
-                        rotation="90 180 0">
+              <!-- Luna (posición relativa a la Tierra) y movimiento rotacional-->
+              <a-entity id="rotacionLunaSistema" rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear">
+                <a-entity id="lunaSistema"
+                          gltf-model="./assets/model/luna/scene.gltf"
+                          scale="0.09 0.09 0.09"
+                          position="0.43 0 0"
+                          rotation="90 180 0">
+                </a-entity>
               </a-entity>
 
             </a-entity>
