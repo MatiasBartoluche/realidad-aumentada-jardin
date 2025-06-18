@@ -34,4 +34,8 @@ window.addEventListener('DOMContentLoaded', () => {
         lunaSistema.setAttribute("visible", "true");
         solSistema.setAttribute("visible", "true");
     });
+
+    document.querySelector("#marcadorFases").addEventListener("markerFound", () => {
+        console.log("Fases de la luna detectada");
+    });    
 });
