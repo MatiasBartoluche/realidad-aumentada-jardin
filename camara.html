@@ -40,7 +40,7 @@
       </a-marker>
 
       <a-marker id="marcadorSol" type="pattern" url="./assets/marker/sol70.patt" emitevents="true">
-        <a-entity id="rotacionSol" rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear">
+        <a-entity id="rotacionSol" rotation="0 0 0" animation="property: rotation; from: 0 0 360; loop: true; dur: 10000; easing: linear">
           <a-entity id="modeloSol"
                 gltf-model="./assets/model/sol/scene.gltf"
                 scale="0.07 0.07 0.07" position="0 0 0" rotation="90 180 0" visible="false">
@@ -54,12 +54,22 @@
       <a-marker id="marcadorSistema" type="pattern" url="./assets/marker/sistema.patt" emitevents="true">
 
       <!-- Sol en el centro, en rotacion -->
-        <a-entity id="rotacionSolSistema" rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 10000; easing: linear">
+        <a-entity id="rotacionSolSistema" position="0 0 0" rotation="0 0 0" animation="property: rotation; from: 0 0 360; loop: true; dur: 10000; easing: linear">
           <a-entity id="solSistema"
                 gltf-model="./assets/model/sol/scene.gltf"
-                scale="0.05 0.05 0.05" position="0 0 0" rotation="90 180 0" visible="false">
+                scale="0.05 0.05 0.05" rotation="90 180 0" visible="false">
           </a-entity>
-        </a-entity>
+
+          <!-- Luz que emula al Sol -->
+           <!--
+          <a-light type="point"
+                  color="#ffffff"
+                  intensity="2"
+                  distance="10"
+                  decay="2">
+          </a-light>
+          -->
+        </a-entity> <!-- fin del contenedor del sol -->
 
         <!-- Contenedor que rota alrededor del Sol (órbita de la Tierra) -->
         <a-entity id="orbitaTierra"
@@ -78,30 +88,28 @@
               </a-entity>
             </a-entity>
 
-
             <!-- Órbita de la Luna (rota alrededor de la Tierra) -->
-            <a-entity id="orbitaLuna"
+            <a-entity id="orbitaLuna" position="0 0 0"
                       animation="property: rotation; from: 0 0 360; loop: true; dur: 10000; easing: linear">
               
               <!-- Luna (posición relativa a la Tierra) y movimiento rotacional-->
-              <a-entity id="rotacionLunaSistema" rotation="0 0 0" animation="property: rotation; from: 0 0 360; loop: true; dur: 10000; easing: linear">
+              <a-entity id="rotacionLunaSistema" rotation="0 0 0">
                 <a-entity id="lunaSistema"
                           gltf-model="./assets/model/luna/scene.gltf"
                           scale="0.09 0.09 0.09"
-                          position="0.43 0 0"
-                          rotation="90 180 0">
+                          position="0.6 0 0"
+                          rotation="90 180 0"
+                          animation="property: rotation; from: 0 0 360; loop: true; dur: 10000; easing: linear">
                 </a-entity>
               </a-entity>
+            </a-entity> <!-- fin de la orbitaLuna -->
 
-            </a-entity>
-
-          </a-entity>
-        </a-entity>
+          </a-entity> <!-- fin del contenedor tierra -->
+        </a-entity> <!-- fin de la orbita de la tierra -->
 
       </a-marker>
 
       <a-entity camera></a-entity>
-
     </a-scene>
 
   </body>
