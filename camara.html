@@ -48,7 +48,7 @@
         </a-entity>
       </a-marker>
 
-<!--##############################################################################################-->
+<!--################################# Sistema de rotaciones sol, tierra y luna ###########################-->
 
       <!-- Marcador que visualiza sistema de rotaciones -->
       <a-marker id="marcadorSistema" type="pattern" url="./assets/marker/sistema.patt" emitevents="true">
@@ -109,9 +109,31 @@
 
       </a-marker>
       
+<!-- ##################################### fases de la luna ############################################# -->
+      <a-marker id="marcadorFases" type="pattern" url="./assets/marker/fasesluna.patt" emitevents="true">      
+        <!-- Luna estática al centro -->
+        <a-entity id="lunaFases"
+                  gltf-model="./assets/model/luna/scene.gltf"
+                  scale="0.5 0.5 0.5"
+                  position="0 0 0.75"
+                  rotation="90 180 0">
+        </a-entity>
 
-      <a-marker id="marcadorFases" type="pattern" url="./assets/marker/fasesluna.patt" emitevents="true">
+        <!-- Orbita del Sol (luz) girando alrededor de la Luna -->
+        <a-entity id="orbitaLuz"
+                  animation="property: rotation; from: 0 0 0; to: 0 0 360; loop: true; dur: 15000; easing: linear">
 
+          <!-- La luz gira a distancia constante -->
+          <a-entity position="2 0 0">
+            <a-light type="point"
+                    color="#ffffff"
+                    intensity="2"
+                    distance="10"
+                    decay="2">
+            </a-light>
+          </a-entity>
+
+        </a-entity>
       </a-marker>
 
       <a-entity camera></a-entity>
