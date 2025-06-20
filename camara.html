@@ -111,28 +111,44 @@
       
 <!-- ##################################### fases de la luna ############################################# -->
       <a-marker id="marcadorFases" type="pattern" url="./assets/marker/fasesluna.patt" emitevents="true">      
-        <!-- Luna estática al centro -->
-        <a-entity id="lunaFases"
-                  gltf-model="./assets/model/luna/scene.gltf"
-                  scale="0.5 0.5 0.5"
-                  position="0 0 0.75"
-                  rotation="90 180 0">
-        </a-entity>
 
-        <!-- Orbita del Sol (luz) girando alrededor de la Luna -->
-        <a-entity id="orbitaLuz"
-                  animation="property: rotation; from: 0 0 0; to: 0 0 360; loop: true; dur: 15000; easing: linear">
-
-          <!-- La luz gira a distancia constante -->
-          <a-entity position="2 0 0">
-            <a-light type="point"
-                    color="#ffffff"
-                    intensity="2"
-                    distance="10"
-                    decay="2">
-            </a-light>
+        <a-entity id="rotacionSolFase" position="-1.5 0 0" rotation="0 0 0">
+          <a-entity id="solFases"
+                gltf-model="./assets/model/sol/scene.gltf"
+                scale="0.05 0.05 0.05" rotation="0 180 0" visible="false">
           </a-entity>
 
+          <!-- Luz que emula al Sol -->
+          <a-light type="point"
+                  color="#ffffff"
+                  intensity="5"
+                  distance="10"
+                  decay="2">
+          </a-light>
+        </a-entity> <!-- fin del contenedor del sol -->
+
+        <a-entity id="contenedorTierraFases" position="0 0 0">
+          <a-entity id="rotacionTierraFases">
+            <a-entity id="tierraFases"
+                      gltf-model="./assets/model/tierra/scene.gltf"
+                      scale="0.25 0.25 0.25"
+                      rotation="0 180 0">
+            </a-entity>
+          </a-entity>
+
+          <!-- Orbita de la Luna (en sentido antihorario → de derecha a izquierda) -->
+          <a-entity id="orbitaLunaFases" position="0 0 0"
+                    animation="property: rotation; from: 0 360 0; to: 0 0 0; loop: true; dur: 10000; easing: linear">
+            
+            <!-- La Luna gira alrededor de la Tierra -->
+            <a-entity id="lunaFases"
+                      gltf-model="./assets/model/luna/scene.gltf"
+                      scale="0.09 0.09 0.09"
+                      position="0.5 0 0"
+                      rotation="90 180 0">
+            </a-entity>
+
+          </a-entity>
         </a-entity>
       </a-marker>
 
@@ -141,3 +157,4 @@
 
   </body>
 </html>
+

@@ -7,8 +7,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const lunaSistema = document.querySelector("#lunaSistema");
     const solSistema = document.querySelector("#solSistema");
 
-    //const tierraFases = document.querySelector("#tierraFases");
+    const tierraFases = document.querySelector("#tierraFases");
     const lunaFases = document.querySelector("#lunaFases");
+    const solFaes = document.querySelector("#solFases");
 
 /*-------------------------------- mostrar modelos de planetas ----------------------------------------*/
     document.querySelector("#marcadorTierra").addEventListener("markerFound", () => {
@@ -35,8 +36,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector("#marcadorFases").addEventListener("markerFound", () => {
         console.log("Fases de la luna detectada");
-        //tierraFases.setAttribute("visible", "true");
+        tierraFases.setAttribute("visible", "true");
         lunaFases.setAttribute("visible", "true");
+        solFases.setAttribute("visible", "true");
     });  
 /*------------------------------------------------------------------------------------------------------*/
     
@@ -66,7 +68,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector("#marcadorFases").addEventListener("markerLost", () => {
         console.log("Fases de la luna ocultada");
-        //tierraFases.setAttribute("visible", "false");
+        tierraFases.setAttribute("visible", "false");
         lunaFases.setAttribute("visible", "false");
+        solFases.setAttribute("visible", "true");
     });  
 });
