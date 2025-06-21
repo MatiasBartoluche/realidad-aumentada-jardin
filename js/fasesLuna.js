@@ -128,7 +128,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         angle = 0;
         paused = false;
-        rotarLuna();        
+        rotarLuna();
     });  
 
     document.querySelector("#marcadorFases").addEventListener("markerLost", () => {
