@@ -169,19 +169,29 @@
           </a-entity>
 
           <!-- Orbita de la Luna (en sentido antihorario → de derecha a izquierda) -->
-          <a-entity id="orbitaLunaFases" position="0 0 0"
-                    animation="property: rotation; to: 0 360 0; from: 0 0 0; loop: true; dur: 10000; easing: linear">
+          <a-entity id="orbitaLunaFases" position="0 0 0">
             
             <!-- La Luna gira alrededor de la Tierra -->
             <a-entity id="lunaFases"
                       gltf-model="./assets/model/luna/scene.gltf"
                       scale="0.09 0.09 0.09"
-                      position="0.5 0 0"
+                      position="0 0 0.7"
                       rotation="90 180 0">
             </a-entity>
 
           </a-entity>
         </a-entity>
+
+        <!-- Texto informativo -->
+        <a-text id="faseTexto"
+                value=""
+                position="0 -2 1"
+                rotation="-90 0 0"
+                width="4"
+                color="#cb6d6d"
+                align="center"
+                visible="false">
+        </a-text>
       </a-marker>
 
       <a-entity camera></a-entity>
@@ -190,3 +200,8 @@
   </body>
 </html>
 
+<!--
+orbitaLunaFase
+animation="property: rotation; to: 0 360 0; from: 0 0 0; loop: true; dur: 10000; easing: linear"
+
+-->
