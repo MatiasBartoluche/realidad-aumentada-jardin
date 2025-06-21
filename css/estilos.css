@@ -2,11 +2,13 @@
     /* variables de colores de la pagina */
     --background-color: #333;
     --sidebar-color: #FFFFFF;
-    --black-color: #000000;
+    --black-color: #11121a;
     --primary-color: #538fdc;
     --primary-color-light: #9B27B00D;
     --toggle-color: #78788c;
     --text-color: #d6d6e6;
+    --hover-color: #272832;
+    --accent-color: #0071ff;
 
     /* animaciones de transicion */
     --tran-03: all 0.2s ease;
@@ -16,11 +18,22 @@
     --section--height: 90vh;
 }
 
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: poppins, "Segoe UI", sans-serif;
+    color: var(--text-color);
+}
+
 body{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
 }
 
 #titulo{
@@ -31,6 +44,43 @@ body{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+nav{
+    border-bottom: 1px solid var(--hover-color);
+    width: 100vh;
+    background-color: var(--black-color);
+}
+
+/* quitando vinietas y alineando horizontalmente */
+nav ul{
+    list-style: none;
+    display: flex;
+}
+
+nav li{
+    display: flex;
+}
+
+nav .home-li{
+    margin-right: auto;
+}
+
+nav a{
+    display: flex;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 1em 2em;
+    transition: background-color 150ms ease;
+}
+
+nav a:hover{
+    background-color: var(--hover-color);
+}
+
+/* elemento de la lista subrayado */
+nav a.active-link{
+    border-bottom: 2px solid var(--text-color);
 }
 
 section{
