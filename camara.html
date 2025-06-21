@@ -20,7 +20,6 @@
 
   <body>
     <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled:false">
-
       <a-marker id="marcadorTierra" type="pattern" url="./assets/marker/tierra60.patt" emitevents="true">
         <a-light type="ambient" color="#ffffff"></a-light>
         <a-entity id="rotacionTierra" rotation="0 0 0" animation="property: rotation; from: 0 0 360; loop: true; dur: 10000; easing: linear">
@@ -28,7 +27,17 @@
                 gltf-model="./assets/model/tierra/scene.gltf"
                 scale="0.5 0.5 0.5" position="0 0 0" rotation="90 180 0" visible="false">
           </a-entity>
-        </a-entity>    
+        </a-entity>
+
+        <a-text id="infoTierra"
+                value="Planeta Tierra\n3er planeta del Sistema Solar\nGira sobre su eje en 24 horas\nOrbita el sol en 365 días"
+                align="center"
+                position="-1.2 0 0"
+                rotation="-90 0 0"
+                width="2"
+                color="#cb6d6d"
+                visible="false">
+        </a-text>
       </a-marker>
 
       <a-marker id="marcadorLuna" type="pattern" url="./assets/marker/luna60.patt" emitevents="true">
@@ -39,6 +48,16 @@
                 scale="0.5 0.5 0.5" position="0 0 0" rotation="90 180 0" visible="false">
           </a-entity>
         </a-entity>
+
+        <a-text id="infoLuna"
+                value="La Luna\n3Orbita alrededor de la tierra\nGira sobre su eje en 28 días\nOrbita la tierra en 28 días"
+                align="center"
+                position="-1.2 0 0"
+                rotation="-90 0 0"
+                width="2"
+                color="#cb6d6d"
+                visible="false">
+        </a-text>
       </a-marker>
 
       <a-marker id="marcadorSol" type="pattern" url="./assets/marker/sol70.patt" emitevents="true">
@@ -46,9 +65,19 @@
         <a-entity id="rotacionSol" rotation="0 0 0" animation="property: rotation; from: 0 0 360; loop: true; dur: 10000; easing: linear">
           <a-entity id="modeloSol"
                 gltf-model="./assets/model/sol/scene.gltf"
-                scale="0.07 0.07 0.07" position="0 0 0"  visible="false">
+                scale="0.05 0.05 0.05" position="0 0 0"  visible="false">
           </a-entity>
         </a-entity>
+
+        <a-text id="infoSol"
+                value="El Sol\nEl centro del sostema solar\nlos planetas orbitan alrededor\nTemperatura de la superficie 5500°C"
+                align="center"
+                position="-1.2 0 0"
+                rotation="-90 0 0"
+                width="2"
+                color="#cb6d6d"
+                visible="false">
+        </a-text>
       </a-marker>
 
 <!--################################# Sistema de rotaciones sol, tierra y luna ###########################-->
