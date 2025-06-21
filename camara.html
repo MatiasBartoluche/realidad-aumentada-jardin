@@ -20,26 +20,30 @@
 
   <body>
     <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled:false">
+      
+      <!--##################################### marcador tierra ##########################################-->
       <a-marker id="marcadorTierra" type="pattern" url="./assets/marker/tierra60.patt" emitevents="true">
         <a-light type="ambient" color="#ffffff"></a-light>
+        
+        <a-text id="infoTierra"
+                value="Planeta Tierra\n3er planeta del Sistema Solar\nGira sobre su eje en 24 horas\nOrbita el sol en 365 días"
+                align="center"
+                position="0 1 0.5"
+                rotation="-90 0 0"
+                width="2"
+                color="#e9a1a1"
+                visible="false">
+        </a-text>        
+
         <a-entity id="rotacionTierra" rotation="0 0 0" animation="property: rotation; from: 0 0 360; loop: true; dur: 10000; easing: linear">
           <a-entity id="modeloTierra"
                 gltf-model="./assets/model/tierra/scene.gltf"
                 scale="0.5 0.5 0.5" position="0 0 0" rotation="90 180 0" visible="false">
           </a-entity>
         </a-entity>
-
-        <a-text id="infoTierra"
-                value="Planeta Tierra\n3er planeta del Sistema Solar\nGira sobre su eje en 24 horas\nOrbita el sol en 365 días"
-                align="center"
-                position="-1.2 0 0"
-                rotation="-90 0 0"
-                width="2"
-                color="#cb6d6d"
-                visible="false">
-        </a-text>
       </a-marker>
 
+      <!--###################################### marcador luna ###########################################-->
       <a-marker id="marcadorLuna" type="pattern" url="./assets/marker/luna60.patt" emitevents="true">
         <a-light type="ambient" color="#ffffff"></a-light>
         <a-entity id="rotacionLuna" rotation="0 0 0" position="0 0 0.7" animation="property: rotation; from: 0 0 360; loop: true; dur: 10000; easing: linear">
@@ -52,14 +56,15 @@
         <a-text id="infoLuna"
                 value="La Luna\n3Orbita alrededor de la tierra\nGira sobre su eje en 28 días\nOrbita la tierra en 28 días"
                 align="center"
-                position="-1.2 0 0"
+                position="0 1 0.5"
                 rotation="-90 0 0"
                 width="2"
-                color="#cb6d6d"
+                color="#e9a1a1"
                 visible="false">
         </a-text>
       </a-marker>
 
+      <!--##################################### marcador sol #############################################-->
       <a-marker id="marcadorSol" type="pattern" url="./assets/marker/sol70.patt" emitevents="true">
         <a-light type="ambient" color="#ffffff"></a-light>
         <a-entity id="rotacionSol" rotation="0 0 0" animation="property: rotation; from: 0 0 360; loop: true; dur: 10000; easing: linear">
@@ -72,10 +77,10 @@
         <a-text id="infoSol"
                 value="El Sol\nEl centro del sostema solar\nlos planetas orbitan alrededor\nTemperatura de la superficie 5500°C"
                 align="center"
-                position="-1.2 0 0"
+                position="0 1 0.5"
                 rotation="-90 0 0"
                 width="2"
-                color="#cb6d6d"
+                color="#e9a1a1"
                 visible="false">
         </a-text>
       </a-marker>
@@ -93,7 +98,6 @@
           </a-entity>
 
           <!-- Luz que emula al Sol -->
-          
           <a-light id="luzSistema" type="point"
                   color="#ffffff"
                   intensity="5"
@@ -110,7 +114,7 @@
           <!-- Contenedor Tierra + órbita lunar (posición fija relativa a Sol) -->
           <a-entity id="contenedorTierra" position="1.2 0 0">
 
-            <!-- Tierra (fija en su órbita alrededor del Sol) y movimiento rotacional -->
+            <!-- Tierra (fija en su contenedor) y movimiento rotacional -->
             <a-entity id="rotacionTierraSistema" rotation="0 0 0" animation="property: rotation; from: 0 0 360; loop: true; dur: 10000; easing: linear">
               <a-entity id="tierraSistema"
                         gltf-model="./assets/model/tierra/scene.gltf"
@@ -168,9 +172,7 @@
             </a-entity>
           </a-entity>
 
-          <!-- Orbita de la Luna (en sentido antihorario → de derecha a izquierda) -->
           <a-entity id="orbitaLunaFases" position="0 0 0">
-            
             <!-- La Luna gira alrededor de la Tierra -->
             <a-entity id="lunaFases"
                       gltf-model="./assets/model/luna/scene.gltf"
@@ -178,7 +180,6 @@
                       position="0 0 0.7"
                       rotation="90 180 0">
             </a-entity>
-
           </a-entity>
         </a-entity>
 
@@ -188,7 +189,7 @@
                 position="0 -2 1"
                 rotation="-90 0 0"
                 width="4"
-                color="#cb6d6d"
+                color="#e9a1a1"
                 align="center"
                 visible="false">
         </a-text>
@@ -199,9 +200,3 @@
 
   </body>
 </html>
-
-<!--
-orbitaLunaFase
-animation="property: rotation; to: 0 360 0; from: 0 0 0; loop: true; dur: 10000; easing: linear"
-
--->

@@ -140,7 +140,10 @@ window.addEventListener('DOMContentLoaded', () => {
         paused = true;
         texto.setAttribute("visible", "false");
 
+        // cuando se pierde el marcador, y animationFrameId == true
         if (animationFrameId) {
+            // cancelar animacion y cambiar el valor de animationFrameId a null
+            // para que el script no siga ejecutandose en segundo plano
             cancelAnimationFrame(animationFrameId);
             animationFrameId = null;
         }
