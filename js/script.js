@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const tierraFases = document.querySelector("#tierraFases");
     const lunaFases = document.querySelector("#lunaFases");
-    const solFaes = document.querySelector("#solFases");
+    const solFases = document.querySelector("#solFases");
 
 /*-------------------------------- mostrar modelos de planetas ----------------------------------------*/
     document.querySelector("#marcadorTierra").addEventListener("markerFound", () => {

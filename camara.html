@@ -22,6 +22,7 @@
     <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled:false">
 
       <a-marker id="marcadorTierra" type="pattern" url="./assets/marker/tierra60.patt" emitevents="true">
+        <a-light type="ambient" color="#ffffff"></a-light>
         <a-entity id="rotacionTierra" rotation="0 0 0" animation="property: rotation; from: 0 0 360; loop: true; dur: 10000; easing: linear">
           <a-entity id="modeloTierra"
                 gltf-model="./assets/model/tierra/scene.gltf"
@@ -31,15 +32,17 @@
       </a-marker>
 
       <a-marker id="marcadorLuna" type="pattern" url="./assets/marker/luna60.patt" emitevents="true">
-        <a-entity id="rotacionLuna" rotation="0 0 0" animation="property: rotation; from: 0 0 360; loop: true; dur: 10000; easing: linear">
+        <a-light type="ambient" color="#ffffff"></a-light>
+        <a-entity id="rotacionLuna" rotation="0 0 0" position="0 0 0.7" animation="property: rotation; from: 0 0 360; loop: true; dur: 10000; easing: linear">
           <a-entity id="modeloLuna"
                 gltf-model="./assets/model/luna/scene.gltf"
-                scale="0.35 0.35 0.35" position="0 0 0" rotation="90 180 0" visible="false">
+                scale="0.5 0.5 0.5" position="0 0 0" rotation="90 180 0" visible="false">
           </a-entity>
         </a-entity>
       </a-marker>
 
       <a-marker id="marcadorSol" type="pattern" url="./assets/marker/sol70.patt" emitevents="true">
+        <a-light type="ambient" color="#ffffff"></a-light>
         <a-entity id="rotacionSol" rotation="0 0 0" animation="property: rotation; from: 0 0 360; loop: true; dur: 10000; easing: linear">
           <a-entity id="modeloSol"
                 gltf-model="./assets/model/sol/scene.gltf"
@@ -61,14 +64,14 @@
           </a-entity>
 
           <!-- Luz que emula al Sol -->
-           <!--
-          <a-light type="point"
+          
+          <a-light id="luzSistema" type="point"
                   color="#ffffff"
-                  intensity="2"
+                  intensity="5"
                   distance="10"
                   decay="2">
           </a-light>
-          -->
+          
         </a-entity> <!-- fin del contenedor del sol -->
 
         <!-- Contenedor que rota alrededor del Sol (órbita de la Tierra) -->
@@ -112,14 +115,14 @@
 <!-- ##################################### fases de la luna ############################################# -->
       <a-marker id="marcadorFases" type="pattern" url="./assets/marker/fasesluna.patt" emitevents="true">      
 
-        <a-entity id="rotacionSolFase" position="-1.5 0 0" rotation="0 0 0">
+        <a-entity id="rotacionSolFase" position="-1.3 0 0" rotation="0 0 0">
           <a-entity id="solFases"
                 gltf-model="./assets/model/sol/scene.gltf"
                 scale="0.05 0.05 0.05" rotation="0 180 0" visible="false">
           </a-entity>
 
           <!-- Luz que emula al Sol -->
-          <a-light type="point"
+          <a-light id="luzFases" type="point"
                   color="#ffffff"
                   intensity="5"
                   distance="10"
@@ -138,7 +141,7 @@
 
           <!-- Orbita de la Luna (en sentido antihorario → de derecha a izquierda) -->
           <a-entity id="orbitaLunaFases" position="0 0 0"
-                    animation="property: rotation; from: 0 360 0; to: 0 0 0; loop: true; dur: 10000; easing: linear">
+                    animation="property: rotation; to: 0 360 0; from: 0 0 0; loop: true; dur: 10000; easing: linear">
             
             <!-- La Luna gira alrededor de la Tierra -->
             <a-entity id="lunaFases"
