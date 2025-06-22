@@ -18,6 +18,8 @@
     --section--height: 90vh;
 }
 
+/* ######################### Estilos para pantallas de PC y Notebook #############################*/
+
 *{
     margin: 0;
     box-sizing: border-box;
@@ -56,6 +58,7 @@ nav{
 nav ul{
     list-style: none;
     display: flex;
+    padding: 0;
 }
 
 nav li{
@@ -88,4 +91,26 @@ section{
     margin: 1%;
     background-color: var(--primary-color);
     border-radius: 20px;
+}
+
+/*########################## estilos #####################*/
+
+@media screen and (max-width: 700px){
+    nav{
+        position: fixed;
+        top: 0; /* ubicar el menuarriba a la derecha */
+        right: 0;
+        height: 100vh; /* ocupa todo el alto de la pantalla */
+        width: min(15em, 100%); /* limitando el ancho */
+        border-left: 1px solid var(--hover-color);
+    }
+
+    nav ul{
+        width: 100%; /* cda elemento de la lista ocupa todo el ancho del contenedor*/
+        flex-direction: column; /* elementos mostrados uno debajo del otro*/
+    }
+
+    nav a.active-link{
+        border-bottom: none;
+    }
 }
