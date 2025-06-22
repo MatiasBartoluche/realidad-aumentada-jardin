@@ -121,6 +121,15 @@ article h3{
     width: 50%;
 }
 
+/* capa que bloqueara el contenido debajo del menu */
+#overlay{
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    display: none;
+}
+
 /*########################## estilos #####################*/
 
 @media screen and (max-width: 700px){
@@ -143,6 +152,11 @@ article h3{
     /*aplicar esta clase al nav para mostrar menu vertical*/
     nav.show{
         right: 0;
+    }
+
+    /* activar la capa bloqueadora */
+    nav.show ~ #overlay{
+        display: block;
     }
 
     nav ul{
