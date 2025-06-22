@@ -8,7 +8,7 @@
         <title>Realidad aumentada jardin</title>
         <link rel="stylesheet" href="./css/estilos.css" />
 
-        <!--<script src="./js/script.js"></script>-->
+        <script src="./js/menu.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
 
@@ -17,8 +17,17 @@
             <h1>Realidad aumentada para jardin</h1>
         </header>
 
-        <nav>
+        <button id="open-sidebar-button" onclick="openSidebar()">
+            <img src="./img/openMenu.png">
+        </button>
+
+        <nav id="navbar">
             <ul>
+                <li>
+                    <button id="close-sidebar-button" onclick="closeSidebar()">
+                        <img src="./img/closeMenu.png">
+                    </button>
+                </li>
                 <li class="home-li"><a class="active-link" href="#infoPagina">A cerca de</a></li>
                 <li><a href="#seccionFasesLuna">Fases de la luna</a></li>
                 <li><a href="#opcion3">opcion 3</a></li>
