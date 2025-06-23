@@ -1,14 +1,13 @@
 :root{
     /* variables de colores de la pagina */
-    --background-color: #333;
-    --sidebar-color: #FFFFFF;
-    --black-color: #11121a;
-    --primary-color: #538fdc;
-    --primary-color-light: #9B27B00D;
     --toggle-color: #78788c;
     --text-color: #d6d6e6;
     --hover-color: #272832;
     --accent-color: #0071ff;
+    
+    --blue60-color: #031926;
+    --blue30-color: #9dbebb;
+    --blue10-color: #468189;
 
     /* animaciones de transicion */
     --tran-03: all 0.2s ease;
@@ -38,7 +37,7 @@ body{
 
 #titulo{
     width: 100%;
-    background-color: var(--black-color);
+    background-color: var(--blue60-color);
     color: var(--sidebar-color);
     display: flex;
     flex-wrap: wrap;
@@ -48,7 +47,7 @@ body{
 
 nav{
     border-bottom: 1px solid var(--hover-color);
-    background-color: var(--black-color);
+    background-color: var(--blue60-color);
     /*anclar menu a la parte superior*/
     position: sticky;
     top: 0;
@@ -98,11 +97,11 @@ nav a.active-link{
     padding: 1em;
     margin-left: auto;
     cursor: pointer;
-    background-color: var(--black-color);
+    background-color: var(--blue60-color);
     /*anclar el boton de menu a la parte superior*/
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 9;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 2px 6px rgba(0, 0, 0, alp0.3ha);
@@ -130,7 +129,7 @@ section{
 article{
     width: 98%;
     margin: 1%;
-    background-color: var(--primary-color);
+    background-color: var(--blue10-color);
     border-radius: 20px;
 }
 
