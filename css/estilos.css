@@ -188,10 +188,7 @@ article button, #descargar-imagen{
 
 /*########################## estilos para pantallas inferiores a 700 px #####################*/
 
-@media screen and (max-width: 768px){
-    #titulo{
-        color: var(--text-color);
-    }
+@media (max-width: 768px) and (min-width: 479px){
 
     #open-sidebar-button, #close-sidebar-button{
         display: block;
@@ -243,10 +240,7 @@ article button, #descargar-imagen{
     }
 }
 
-@media screen and (max-width: 479px){
-    #titulo{
-        color: var(--text-color);
-    }
+@media (max-width: 479px){
 
     article p{
         font-size: 15px;
@@ -254,6 +248,7 @@ article button, #descargar-imagen{
 
     .realidad-aumentada p{
         width: 100%;
+        margin: 0;
     }
 
     .realidad-aumentada a{
