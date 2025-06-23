@@ -74,7 +74,7 @@
                 <div class="container" id="controlarAltura">
                     <div id="carrousel-fasesluna" class="carousel slide w-100" data-bs-interval="false">
 
-                        <div class="carousel-indicators">
+                        <div class="carousel-indicators bg-dark">
                             <button class="active" data-bs-target="#carrousel-fasesluna" data-bs-slide-to="0"></button>
                             <button data-bs-target="#carrousel-fasesluna" data-bs-slide-to="1"></button>
                             <button data-bs-target="#carrousel-fasesluna" data-bs-slide-to="2"></button>
@@ -84,59 +84,24 @@
 
                         <div class="carousel-inner">
 
-                            <div class="carousel-item active">
+                            <div class="carousel-item active" data-titulo="Sol">
                                 <img class="d-block w-100" src="./img/sol70.png">
-                                <div class="carousel-caption bg-dark">
-                                    <h3>El sol</h3>
-                                    <!-- boton de descarga-->
-                                    <a href="./img/sol70.png" download="el-sol.png">
-                                        <button>Descargar Sol</button>
-                                    </a>
-                                </div>
-                                
                             </div>
 
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="./img/tierra60.png">
-                                <div class="carousel-caption bg-dark">
-                                    <h3>La tierra</h3>
-                                    <!-- boton de descarga-->
-                                    <a href="./img/tierra60.png" download="la-tierra.png">
-                                        <button>Descargar la Tierra</button>
-                                    </a> 
-                                </div>                               
+                            <div class="carousel-item" data-titulo="Tierra">
+                                <img class="d-block w-100" src="./img/tierra60.png">                               
                             </div>
 
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="./img/luna60.png">
-                                <div class="carousel-caption bg-dark">
-                                    <h3>La luna</h3>
-                                    <!-- boton de descarga-->
-                                    <a href="./img/luna60.png" download="la-luna.png">
-                                        <button>Descargar Luna</button>
-                                    </a> 
-                                </div>                               
+                            <div class="carousel-item" data-titulo="Luna">
+                                <img class="d-block w-100" src="./img/luna60.png">                               
                             </div>
 
-                            <div  class="carousel-item">
-                                <img class="d-block w-100" src="./img/sistema.png">
-                                <div class="carousel-caption bg-dark">
-                                    <h3>Orbitas de la tierra y la luna</h3>
-                                    <!-- boton de descarga-->
-                                    <a href="./img/sistema.png" download="rotacion.png">
-                                        <button>Descargar Orbitas</button>
-                                    </a>                                 </div>                               
+                            <div  class="carousel-item" data-titulo="Orbitas">
+                                <img class="d-block w-100" src="./img/sistema.png">                              
                             </div>
 
-                            <div class="carousel-item">
+                            <div class="carousel-item" data-titulo="Fases de la luna">
                                 <img class="d-block w-100" src="./img/fasesluna.png">
-                                <div class="carousel-caption bg-dark">
-                                    <h3>Fases de la luna</h3>
-                                    <!-- boton de descarga-->
-                                    <a href="./img/fasesluna.png" download="fases-luna.png">
-                                        <button>Descargar Fases de la luna</button>
-                                    </a>
-                                </div>
                             </div>
                         </div>
                         <!-- botones laterales -->
@@ -148,12 +113,21 @@
                             <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
+
+                    <div class="text-center mt-3">
+                        <a id="descargar-imagen" href="#" download>
+                            Descargar imagen
+                        </a>
+                    </div>
                 </div>
 <!--################################# fin carrousel bootstrap #############################-->
 
-                <a href="camara.html">
-                    <button id="planetas">Ver fases de la luna</button>
-                </a>
+                <div class="realidad-aumentada">
+                    <p>Para acceder a realidad aumentada, haga click en el siguiente botón</p>
+                    <a href="camara.html">
+                        <button id="planetas">Ver fases de la luna</button>
+                    </a>
+                </div>
             </article>
             
         </section>

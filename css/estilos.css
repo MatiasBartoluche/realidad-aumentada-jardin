@@ -140,15 +140,33 @@ article{
 article p{
     margin-top: .35em;
     padding: 1em;
+    font-size: 25px;
 }
 
-article button{
+article button, #descargar-imagen{
     background-color: var(--blue60-color);
     color: #ffffff;
     border: 0;
     margin: 1em;
     padding: 1em;
     border-radius: 10px;
+    text-decoration: none;
+}
+
+.realidad-aumentada{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.realidad-aumentada p{
+    width: 70%;
+}
+
+.realidad-aumentada a{
+    width: 30%;
 }
 
 .carousel-control-prev-icon,
@@ -170,7 +188,7 @@ article button{
 
 /*########################## estilos para pantallas inferiores a 700 px #####################*/
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 768px){
     #open-sidebar-button, #close-sidebar-button{
         display: block;
     }
@@ -209,5 +227,20 @@ article button{
 
     nav a.active-link{
         border-bottom: none;
+    }
+
+    .realidad-aumentada p{
+        width: 65%;
+        font-size: 20px;
+    }
+
+    .realidad-aumentada a{
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 479px){
+    article p{
+        font-size: 15px;
     }
 }
