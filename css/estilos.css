@@ -146,8 +146,17 @@ article button{
     background-color: var(--blue60-color);
     color: #ffffff;
     border: 0;
+    margin: 1em;
     padding: 1em;
     border-radius: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+    background-color: var(--blue60-color);
+    border-radius: 50%;                  /* forma redonda */
+    padding: 1em;                        /* aumenta el tamaño del botón */
+    filter: brightness(2);               /* mejora la visibilidad del ícono */
 }
 
 /* capa que bloqueara el contenido debajo del menu */
