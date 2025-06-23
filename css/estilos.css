@@ -4,7 +4,7 @@
     --text-color: #d6d6e6;
     --hover-color: #272832;
     --accent-color: #0071ff;
-    
+
     --blue60-color: #031926;
     --blue30-color: #9dbebb;
     --blue10-color: #468189;
@@ -26,8 +26,7 @@
 
 html{
     font-family: poppins, "Segoe UI", sans-serif;
-    color: var(--text-color);
-    
+    color: #ffffff; 
 }
 
 body{
@@ -131,15 +130,24 @@ article{
     margin: 1%;
     background-color: var(--blue10-color);
     border-radius: 20px;
-}
 
-article h3{
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 article p{
     margin-top: .35em;
     padding: 1em;
+}
+
+article button{
+    background-color: var(--blue60-color);
+    color: #ffffff;
+    border: 0;
+    padding: 1em;
+    border-radius: 10px;
 }
 
 /* capa que bloqueara el contenido debajo del menu */
