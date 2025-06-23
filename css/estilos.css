@@ -37,7 +37,7 @@ body{
 #titulo{
     width: 100%;
     background-color: var(--blue60-color);
-    color: var(--sidebar-color);
+    color: var(--text-color);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
