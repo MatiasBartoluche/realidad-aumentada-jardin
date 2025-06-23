@@ -9,6 +9,13 @@ window.addEventListener('DOMContentLoaded', () => {
             closeSidebar();
         });
     });
+
+   const titulo = document.getElementById("titulo");
+   const alturaTitulo = parseInt(titulo.offsetHeight);
+   console.log(alturaTitulo); // Imprime la altura del elemento en píxeles
+
+   const botonMenu = document.getElementById("open-sidebar-button");
+   botonMenu.style.top = alturaTitulo+'px';
 });
 
 const navbar = document.getElementById('navbar');
