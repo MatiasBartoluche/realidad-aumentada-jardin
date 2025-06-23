@@ -189,6 +189,10 @@ article button, #descargar-imagen{
 /*########################## estilos para pantallas inferiores a 700 px #####################*/
 
 @media screen and (max-width: 768px){
+    #titulo{
+        color: var(--text-color);
+    }
+
     #open-sidebar-button, #close-sidebar-button{
         display: block;
     }
@@ -240,7 +244,20 @@ article button, #descargar-imagen{
 }
 
 @media screen and (max-width: 479px){
+    #titulo{
+        color: var(--text-color);
+    }
+
     article p{
         font-size: 15px;
+    }
+
+    .realidad-aumentada p{
+        width: 100%;
+    }
+
+    .realidad-aumentada a{
+        width: 100%;
+        text-align: center;
     }
 }
