@@ -188,7 +188,7 @@ article button, #descargar-imagen{
 
 /*########################## estilos para pantallas inferiores a 700 px #####################*/
 
-@media (max-width: 768px) and (min-width: 479px){
+@media (max-width: 768px) and (min-width: 480px){
 
     #open-sidebar-button, #close-sidebar-button{
         display: block;
