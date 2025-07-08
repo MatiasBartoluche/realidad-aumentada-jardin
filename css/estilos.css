@@ -71,6 +71,7 @@ nav ul{
 
 nav li{
     display: flex;
+    width: 100%;
 }
 
 nav .home-li{
